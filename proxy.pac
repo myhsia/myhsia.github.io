@@ -8,7 +8,10 @@ function FindProxyForURL(url, host) {
         // Wikipedia
         shExpMatch(host, "*.wikipedia.org")         ||
         shExpMatch(host, "*.wikimedia.org")         ||
-        shExpMatch(host, "*.wikisource.org")
+        shExpMatch(host, "*.wikisource.org")        ||
+        // CDN
+        //// StackExchange
+        shExpMatch(host, "*.gravatar.com")
     );
 
     if (isTargetStandard) {
