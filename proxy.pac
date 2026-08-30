@@ -1,33 +1,38 @@
 function FindProxyForURL(url, host) {
     var companyProxy = "PROXY 10.16.100.150:1082; DIRECT";
+    
     var isTargetStandard = (
         // Google
-        shExpMatch(host, "*.google.com")            ||
-        shExpMatch(host, "*.googleapis.com")        ||
-        shExpMatch(host, "*.googleusercontent.com") ||
-        shExpMatch(host, "*.gstatic.com")           ||
-        shExpMatch(host, "*.withgoogle.com")        ||
+        dnsDomainIs(host, "google.com")             ||
+        dnsDomainIs(host, "googleapis.com")         ||
+        dnsDomainIs(host, "googleusercontent.com")  ||
+        dnsDomainIs(host, "gstatic.com")            ||
+        dnsDomainIs(host, "withgoogle.com")         ||
+        
         // Wikipedia
-        shExpMatch(host, "*.wikipedia.org")         ||
-        shExpMatch(host, "*.wikimedia.org")         ||
-        shExpMatch(host, "*.wikisource.org")        ||
+        dnsDomainIs(host, "wikipedia.org")          ||
+        dnsDomainIs(host, "wikimedia.org")          ||
+        dnsDomainIs(host, "wikisource.org")         ||
+        
         // Git
-        shExpMatch(host, "*.githubassets.com")      ||
-        shExpMatch(host, "*.api.github.com")        ||
-        shExpMatch(host, "*.collector.github.com")  ||
+        dnsDomainIs(host, "githubassets.com")       ||
+        shExpMatch (host, "://github.com")          ||
+        shExpMatch (host, "://github.com")          ||
+        
         // Tech
-        shExpMatch(host, "*.linux.do")              ||
-        shExpMatch(host, "*.v2ex.com")              ||
-        // CDN
+        dnsDomainIs(host, "linux.do")               ||
+        dnsDomainIs(host, "v2ex.com")               ||
+        
+        // CDN & Others
         //// StackExchange
-        shExpMatch(host, "*.gravatar.com")          ||
+        dnsDomainIs(host, "gravatar.com")           ||
         //// Python
-        shExpMatch(host, "*.analytics.python.org")  ||
-        shExpMatch(host, "*.ethicalads.io")         ||
+        shExpMatch (host, "analytics.python.org")   ||
+        dnsDomainIs(host, "ethicalads.io")          ||
         //// ScienceDirect
-        shExpMatch(host, "*.pendo.io")              ||
-        shExpMatch(host, "*.elsevier.com")          ||
-        shExpMatch(host, "*.js-agent.newrelic.com")
+        dnsDomainIs(host, "pendo.io")               ||
+        dnsDomainIs(host, "elsevier.com")           ||
+        shExpMatch (host, "://newrelic.com")
     );
 
     if (isTargetStandard) {
