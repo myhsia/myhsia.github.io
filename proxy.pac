@@ -15,6 +15,9 @@ function FindProxyForURL(url, host) {
         shExpMatch(host, "*.githubassets.com")      ||
         shExpMatch(host, "*.api.github.com")        ||
         shExpMatch(host, "*.collector.github.com")  ||
+        // Tech
+        shExpMatch(host, "*.linux.do")              ||
+        shExpMatch(host, "*.v2ex.com")              ||
         // CDN
         //// StackExchange
         shExpMatch(host, "*.gravatar.com")          ||
