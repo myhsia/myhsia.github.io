@@ -20,7 +20,11 @@ function FindProxyForURL(url, host) {
         shExpMatch(host, "*.gravatar.com")          ||
         //// Python
         shExpMatch(host, "*.analytics.python.org")  ||
-        shExpMatch(host, "*.ethicalads.io")
+        shExpMatch(host, "*.ethicalads.io")         ||
+        //// ScienceDirect
+        shExpMatch(host, "*.pendo.io")              ||
+        shExpMatch(host, "*.elsevier.com")          ||
+        shExpMatch(host, "*.js-agent.newrelic.com")
     );
 
     if (isTargetStandard) {
