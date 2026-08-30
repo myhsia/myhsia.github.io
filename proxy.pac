@@ -24,7 +24,8 @@ function FindProxyForURL(url, host) {
         dnsDomainIs(host, "v2ex.com")               ||
         
         // CDN & Others
-        //// StackExchange
+        //// IHS
+        dnsDomainIs(host, "imgur.com")              ||
         dnsDomainIs(host, "gravatar.com")           ||
         //// Python
         shExpMatch (host, "analytics.python.org")   ||
