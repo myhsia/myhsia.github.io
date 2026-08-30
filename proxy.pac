@@ -3,6 +3,7 @@ function FindProxyForURL(url, host) {
     var isTargetStandard = (
         // Google
         shExpMatch(host, "*.google.com")            ||
+        shExpMatch(host, "*.googleapis.com")        ||
         shExpMatch(host, "*.googleusercontent.com") ||
         shExpMatch(host, "*.gstatic.com")           ||
         shExpMatch(host, "*.withgoogle.com")        ||
@@ -16,7 +17,10 @@ function FindProxyForURL(url, host) {
         shExpMatch(host, "*.collector.github.com")  ||
         // CDN
         //// StackExchange
-        shExpMatch(host, "*.gravatar.com")
+        shExpMatch(host, "*.gravatar.com")          ||
+        //// Python
+        shExpMatch(host, "*.analytics.python.org")  ||
+        shExpMatch(host, "*.ethicalads.io")
     );
 
     if (isTargetStandard) {
