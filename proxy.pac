@@ -16,8 +16,6 @@ function FindProxyForURL(url, host) {
         
         // Git
         dnsDomainIs(host, "githubassets.com")       ||
-        shExpMatch (host, "://github.com")          ||
-        shExpMatch (host, "://github.com")          ||
         
         // Tech
         dnsDomainIs(host, "linux.do")               ||
@@ -25,15 +23,17 @@ function FindProxyForURL(url, host) {
         
         // CDN & Others
         //// IHS
-        dnsDomainIs(host, "imgur.com")              ||
+        dnsDomainIs(host, "cloudflareinsights.com") ||
         dnsDomainIs(host, "gravatar.com")           ||
+        dnsDomainIs(host, "imgur.com")              ||
+        dnsDomainIs(host, "stripe.network")         ||
         //// Python
-        shExpMatch (host, "analytics.python.org")   ||
+        dnsDomainIs(host, "analytics.python.org")   ||
         dnsDomainIs(host, "ethicalads.io")          ||
         //// ScienceDirect
         dnsDomainIs(host, "pendo.io")               ||
         dnsDomainIs(host, "elsevier.com")           ||
-        shExpMatch (host, "://newrelic.com")
+        dnsDomainIs(host, "newrelic.com")
     );
 
     if (isTargetStandard) {
