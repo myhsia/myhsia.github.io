@@ -11,7 +11,8 @@ function FindProxyForURL(url, host) {
         shExpMatch(host, "*.wikisource.org")        ||
         // CDN
         //// StackExchange
-        shExpMatch(host, "*.gravatar.com")
+        shExpMatch(host, "*.gravatar.com")          ||
+        shExpMatch(host, "*.googletagmanager.com")
     );
 
     if (isTargetStandard) {
