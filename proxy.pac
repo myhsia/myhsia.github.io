@@ -69,6 +69,7 @@ function FindProxyForURL(url, host) {
         host == "raw.githubusercontent.com"                 ||
         host == "github.myshopify.com"                      ||
         host == "octocaptcha.com"                           ||
+        host == "windows.net"                               ||
         
         // AI
         //// Hugging Face
