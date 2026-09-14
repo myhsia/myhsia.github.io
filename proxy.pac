@@ -66,10 +66,10 @@ function FindProxyForURL(url, host) {
         
         // Git
         isDomain(host, "githubassets.com")                  ||
+        isDomain(host, "windows.net")                       ||
         host == "raw.githubusercontent.com"                 ||
         host == "github.myshopify.com"                      ||
         host == "octocaptcha.com"                           ||
-        host =="productionresultssa11.blob.core.windows.net"||
         
         // AI
         //// Hugging Face
