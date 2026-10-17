@@ -3,7 +3,7 @@ function isDomain(host, domain) {
 }
 
 function FindProxyForURL(url, host) {
-    var companyProxy = "PROXY 10.11.50.100:1082; DIRECT";
+    var companyProxy = "PROXY 10.11.50.186:1082; DIRECT";
 
     host = host.toLowerCase();
     if (host.charAt(host.length - 1) == ".") {
