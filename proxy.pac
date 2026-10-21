@@ -90,6 +90,8 @@ function FindProxyForURL(url, host) {
         // Academic
         //// bioRxiv
         isDomain(host, "biorxiv.org")                       ||
+        //// arXiv
+        isDomain(host, "arxiv.org")                         ||
         //// NCBI
         host == "ftp.wip.ncbi.nlm.nih.gov"                  ||
         host == "www.ncbi.nlm.nih.gov"                      ||
